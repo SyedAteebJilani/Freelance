@@ -5,15 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crochet Creation | Crochet Florist</title>
     
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- CSS Styles -->
     <style>
         /* --- CSS Variables & Color Palette --- */
         :root {
@@ -42,7 +39,6 @@
 
         body {
             background-color: var(--bg-color);
-            /* Subtle watercolor-like background gradients */
             background-image: 
                 radial-gradient(at 0% 0%, hsla(347, 50%, 94%, 0.7) 0px, transparent 50%),
                 radial-gradient(at 100% 0%, hsla(113, 16%, 90%, 0.5) 0px, transparent 50%),
@@ -74,7 +70,7 @@
             padding: 0 24px;
         }
 
-        /* --- Scroll Animations (Vanilla JS classes) --- */
+        /* --- Scroll Animations --- */
         .animate-on-scroll {
             opacity: 0;
             transform: translateY(30px);
@@ -165,6 +161,7 @@
             cursor: pointer;
             transition: var(--transition);
             border: none;
+            font-family: var(--font-body);
         }
 
         .btn-primary {
@@ -236,7 +233,6 @@
             aspect-ratio: 4/5;
         }
         
-        /* Decorative watercolor blob background */
         .blob-wrapper::before {
             content: '';
             position: absolute;
@@ -279,6 +275,7 @@
             color: var(--sage-green);
             font-size: 2.2rem;
             margin-bottom: 10px;
+            display: block;
         }
 
         .about h2 {
@@ -297,17 +294,17 @@
             padding: 100px 0;
         }
 
-        .gallery-header {
+        .section-header {
             text-align: center;
             margin-bottom: 60px;
         }
 
-        .gallery-header h2 {
+        .section-header h2 {
             font-size: 2.5rem;
             margin-bottom: 10px;
         }
 
-        .gallery-header p {
+        .section-header p {
             color: var(--text-light);
             font-family: var(--font-brand);
             font-size: 1.8rem;
@@ -337,7 +334,7 @@
             width: 100%;
             aspect-ratio: 1/1;
             overflow: hidden;
-            background-color: var(--pink-soft); /* Fallback color */
+            background-color: var(--pink-soft);
         }
 
         .card-img-wrapper img {
@@ -367,9 +364,174 @@
             font-style: italic;
         }
 
+        /* --- Order Form Section --- */
+        .order {
+            padding: 80px 0;
+            background-color: var(--warm-white);
+        }
+
+        .order-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(214, 140, 152, 0.08);
+        }
+
+        .order-notice {
+            background-color: rgba(169, 188, 163, 0.15); /* Soft sage background */
+            border-left: 4px solid var(--sage-green);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+        }
+
+        .order-notice i {
+            color: var(--sage-green-dark);
+            margin-right: 8px;
+        }
+
+        .order-notice a {
+            color: var(--pink-dark);
+            font-weight: 500;
+            text-decoration: underline;
+            text-decoration-color: rgba(214, 140, 152, 0.3);
+            text-underline-offset: 3px;
+            transition: var(--transition);
+        }
+
+        .order-notice a:hover {
+            color: var(--sage-green-dark);
+            text-decoration-color: var(--sage-green-dark);
+        }
+
+        .order-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group.full-width {
+            grid-column: span 2;
+        }
+
+        .form-group label {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .order-form input[type="text"],
+        .order-form input[type="email"],
+        .order-form input[type="tel"],
+        .order-form textarea {
+            padding: 14px 16px;
+            border: 1px solid var(--pink-soft);
+            border-radius: 10px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            color: var(--text-dark);
+            background-color: var(--bg-color);
+            transition: var(--transition);
+            resize: vertical;
+        }
+
+        .order-form input:focus,
+        .order-form textarea:focus {
+            outline: none;
+            border-color: var(--sage-green);
+            box-shadow: 0 0 0 3px rgba(169, 188, 163, 0.2);
+        }
+
+        .order-form input::placeholder,
+        .order-form textarea::placeholder {
+            color: #bfaab0;
+        }
+
+        .payment-info-box {
+            background-color: var(--pink-soft);
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px dashed var(--pink-dark);
+            text-align: center;
+            margin: 15px 0 5px 0;
+        }
+        
+        .payment-info-box h4 {
+            color: var(--text-dark);
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+        
+        .payment-info-box p {
+            font-size: 0.95rem;
+            margin-bottom: 5px;
+        }
+
+        /* File Upload Styling */
+        .file-upload-wrapper {
+            position: relative;
+        }
+        
+        .order-form input[type="file"] {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            border: 2px dashed var(--pink-dark);
+            border-radius: 10px;
+            background-color: var(--bg-color);
+            color: var(--text-light);
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .order-form input[type="file"]:hover {
+            background-color: var(--pink-soft);
+            color: var(--text-dark);
+        }
+
+        .order-form input[type="file"]::file-selector-button {
+            background-color: var(--pink-dark);
+            color: var(--white);
+            padding: 8px 16px;
+            border: none;
+            border-radius: 6px;
+            margin-right: 15px;
+            cursor: pointer;
+            font-family: var(--font-body);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .order-form input[type="file"]::file-selector-button:hover {
+            background-color: var(--sage-green);
+        }
+
+        .form-submit {
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .form-submit .btn {
+            width: 100%;
+            max-width: 300px;
+            padding: 16px 32px;
+            font-size: 1.05rem;
+        }
+
         /* --- Footer --- */
         footer {
-            background-color: var(--warm-white);
+            background-color: var(--bg-color);
             padding: 60px 0 30px;
             text-align: center;
             border-top: 1px solid rgba(214, 140, 152, 0.2);
@@ -445,12 +607,20 @@
             .logo-script {
                 font-size: 1.8rem;
             }
+            .order-form {
+                grid-template-columns: 1fr;
+            }
+            .form-group.full-width {
+                grid-column: span 1;
+            }
+            .order-container {
+                padding: 24px 20px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigation -->
     <nav>
         <div class="container nav-container">
             <a href="#" class="logo">
@@ -458,6 +628,7 @@
                 <span class="logo-sub">Crochet Florist</span>
             </a>
             <div class="nav-links">
+                <a href="shop.html" class="nav-link-text">Shop</a>
                 <a href="https://www.instagram.com/crochetcreation96/" target="_blank" class="ig-link-icon" aria-label="Visit our Instagram">
                     <i class="fab fa-instagram"></i>
                 </a>
@@ -465,46 +636,42 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="container hero-grid">
             <div class="hero-content animate-on-scroll">
                 <h1>Flower that never dies 🌷</h1>
                 <p>Handcrafted with love, our crochet bouquets bring everlasting warmth and artisanal charm to your special moments. Perfect for gifting, or keeping forever.</p>
                 <div class="hero-buttons">
-                    <a href="https://www.instagram.com/direct/t/17845347206109968/" target="_blank" class="btn btn-primary">
-                        <i class="fab fa-instagram"></i> DM to Order
+                    <a href="#order-form" class="btn btn-primary">
+                        <i class="fas fa-shopping-bag"></i> Place an Order
                     </a>
                     <a href="https://www.instagram.com/crochetcreation96/" target="_blank" class="btn btn-secondary">
-                        Follow on Instagram
+                        <i class="fab fa-instagram"></i> Follow on Instagram
                     </a>
                 </div>
             </div>
             <div class="hero-image animate-on-scroll delay-2">
                 <div class="blob-wrapper">
-                    <!-- Local placeholder image path as requested -->
-                    <img src="images/Hero image.png" alt="Everlasting Crochet Bouquet" loading="lazy">
+                    <img src="images/Hero image.png" alt="Everlasting Crochet Bouquet" fetchpriority="high">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
     <section class="about">
         <div class="container about-content animate-on-scroll">
             <span class="section-subtitle">Artisanal Quality</span>
             <h2>Handmade with Love</h2>
             <p>Every single stitch is woven with care, patience, and passion. As a specialized crochet florist, we believe in creating gifts that carry deep emotional meaning.</p>
-            <p>Unlike traditional flowers that fade away, our lovey-dovey crochet bouquets stand the test of time an everlasting symbol of affection for your loved ones, best friends, or even yourself.</p>
+            <p>Unlike traditional flowers that fade away, our lovey-dovey crochet bouquets stand the test of time—an everlasting symbol of affection for your loved ones, best friends, or even yourself.</p>
         </div>
     </section>
 
-    <!-- Gallery / Catalog Section -->
-    <section class="gallery">
+       <section class="gallery">
         <div class="container">
             <div class="gallery-header animate-on-scroll">
                 <h2>Our Creations</h2>
-                <p>Lovingly crafted bouquets</p>
+                <p>Lovingly crafts </p>
             </div>
             
             <div class="gallery-grid">
@@ -577,7 +744,80 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <section class="order" id="order-form">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2>Place an Order</h2>
+                <p>Start your custom creation</p>
+            </div>
+            
+            <div class="order-container animate-on-scroll delay-1">
+                <div class="order-notice">
+                    <i class="fas fa-info-circle"></i> <strong>Note:</strong> Payment will be advance for more categories. You can visit our <a href="https://www.instagram.com/crochetcreation96/" target="_blank">Instagram page</a> to see our full catalog.
+                </div>
+                
+                <form class="order-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required placeholder="Enter your name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required placeholder="your@email.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="Enter your number">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="insta">Instagram ID (Optional)</label>
+                        <input type="text" id="insta" name="insta" placeholder="@yourhandle">
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="address">Delivery Address *</label>
+                        <textarea id="address" name="address" required placeholder="Enter your complete delivery address" rows="2"></textarea>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="description">Custom Design Description *</label>
+                        <textarea id="description" name="description" required placeholder="Describe the item, colors, or specific details you want (Max 1000 words)..." rows="4"></textarea>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="reference-image">Reference Image (Optional, if you have a design in mind)</label>
+                        <div class="file-upload-wrapper">
+                            <input type="file" id="reference-image" name="reference-image" accept="image/*">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <div class="payment-info-box">
+                            <h4>Easypaisa Payment Details</h4>
+                            <p><strong>Account Name:</strong> [Enter Your Name Here]</p>
+                            <p><strong>Account Number:</strong> [Enter Your Easypaisa Number Here]</p>
+                            <p style="font-size: 0.85rem; color: var(--text-light); margin-top: 8px;">Please transfer your advance payment to the account above before attaching your screenshot below.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="payment-proof">Advance Payment Screenshot *</label>
+                        <div class="file-upload-wrapper">
+                            <input type="file" id="payment-proof" name="payment-proof" accept="image/*" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-submit full-width">
+                        <button type="submit" class="btn btn-primary">Submit Order Request</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
     <footer>
         <div class="container">
             <div class="footer-content animate-on-scroll">
@@ -597,7 +837,6 @@
         </div>
     </footer>
 
-    <!-- Vanilla JavaScript -->
     <script>
         // 1. Sticky Navigation on Scroll
         const nav = document.querySelector('nav');
@@ -609,8 +848,7 @@
             }
         });
 
-        // 2. Smooth Vanilla JS Scroll Animations (Intersection Observer)
-        // This replaces the need for external libraries like AOS
+        // 2. Smooth Vanilla JS Scroll Animations
         const observerOptions = {
             root: null,
             rootMargin: '0px',
@@ -621,7 +859,7 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
-                    observer.unobserve(entry.target); // Run once
+                    observer.unobserve(entry.target);
                 }
             });
         }, observerOptions);
@@ -633,13 +871,15 @@
         // 3. Dynamic Copyright Year
         document.getElementById('year').textContent = new Date().getFullYear();
 
-       
-        document.querySelectorAll('.fallback-img').forEach((img, index) => {
-            img.addEventListener('error', function() {
-                this.onerror = null; // Prevent infinite fallback loops
-                // Pick a beautiful aesthetic placeholder based on index
-                this.src = fallbackImages[index % fallbackImages.length];
-            });
+        // 4. Form Submit Handler (Visual Feedback Only)
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevents the page from refreshing
+            
+            // This alerts the user that the form logic is handled!
+            // Note: Since this is purely frontend via GitHub Pages, you will need a 
+            // free service like Formspree.io or Netlify Forms later to actually receive these images/emails.
+            alert("Thank you! Your order request and payment screenshot have been submitted. We will contact you shortly!");
+            this.reset(); // Clears the form after submission
         });
     </script>
 </body>
